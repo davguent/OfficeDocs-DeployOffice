@@ -208,7 +208,7 @@ Allowed values:
   <Updates Enabled="True"  /> 
 </Configuration>
 ```
-
+ 
 ## Product element
 
 Defines which products to download or install. If you define multiple products, the products are installed in the order in the configuration file. The first product determines the context for the Microsoft Office First Run Experience. 
