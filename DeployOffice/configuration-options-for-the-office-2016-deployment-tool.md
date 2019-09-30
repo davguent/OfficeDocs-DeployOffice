@@ -208,6 +208,9 @@ Allowed values:
   <Updates Enabled="True"  /> 
 </Configuration>
 ```
+After initial installation, Office COM can also be enabled for existing machines using SCCM Client Settings or Group Policy.  For SCCM, select properties of Client Settings within Administration blade and under "Software Updates" toggle "Enable management of the Office 365 Client Agent" to "Yes".  For domain policy, using Office 2016 ADMX files, locate the "Updates" node under "Computer Policy, Policies, Administrative Templates, Microsoft Office 2016 (Machine)", Updates folder.  Toggle "Office 365 Client Management" to "Enabled". 
+
+There also may be scenarios where Office COM should be removed.  For example, if an IT Pro wants to switch from receiving updates from SCCM to CDN, actions above must be reversed.  The Microsoft Office Click-to-Run Service is responsible for registering and unregistering OfficeC2RCom application during service startup.  Changing domain policy or SCCM client settings for Office 365 Client Management from "Enabled" to "Not configured" is not enough.  Domain Policy or SCCM Client settings require explicit "Disable" selection for Office COM to be successfully deregistered and restore default configuration. Further, any custom update path configuration must also be removed.
 
 ## Product element
 
