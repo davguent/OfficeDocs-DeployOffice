@@ -117,7 +117,7 @@ To configure this capability, use a text editor, such as Notepad, to modify the 
  </Configuration>
 ```
 
-We recommend that you also set the value of the Enabled attribute to True in the Updates element. If you set the value of the Enabled attribute to False, Office 365 clients can still receive updates from Configuration Manager, but users won't see any notifications when updates are pending.
+We recommend that you also set the value of the Enabled attribute to True in the Updates element as it controls the Microsoft Office Automatic Updates 2.0 scheduled task registered during product installation.  Microsoft recommends default configuration (enabled) in all update scenarios including COM for SCCM integration. When COM is enabled, updates will only be delivered by SCCM. This task does more than name implies. By disabling task, Office 365 client will not be able to change channels via Group Policy. 
 
 Then, use the Office Deployment Tool and the configuration file to install Office 365 ProPlus. If you've already installed Office on the devices, you can run the Office Deployment Tool with the configuration file on those computers to update the configuration. 
 
@@ -131,6 +131,7 @@ To use Group Policy to enable this capability, do the following:
 - Download and install the [Administrative Template files (ADMX/ADML) for Office](https://www.microsoft.com/download/details.aspx?id=49030) from the Microsoft Download Center.
 
 - Enable the **Office 365 Client Management** policy setting. You can find this policy setting under Computer Configuration\\Policies\\Administrative Templates\\Microsoft Office 2016 (Machine)\\Updates.
+
 
 
 <a name="BKMK_Package"> </a>
